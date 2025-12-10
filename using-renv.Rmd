@@ -1,0 +1,20 @@
+---
+title: "Using renv"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(ggplot2)
+```
+
+An interactive plot made using `plotly`:
+
+```{r}
+p <- ggplot(mtcars, aes(x=mpg, y=wt, col=factor(cyl)))+
+  geom_point()
+ggplotly(p)
+```
+
